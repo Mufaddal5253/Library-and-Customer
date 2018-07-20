@@ -16,6 +16,9 @@ class Library:
             print("Sorry we don't have the book in our list")
 
     def add_book(self, returned_book):
+        if returned_book in self.available_books:
+            print("you are returning the book you dont have")
+            return False
         self.available_books.append(returned_book)
         print("You have now returned the book.")
 
@@ -48,4 +51,3 @@ while True:
         library.add_book(returned_book)
     elif user_choice is 4:
         quit()
-
